@@ -1,0 +1,132 @@
+diff -uNr ming-0.3.0/py_ext/mingc.py ming-0.3.0-abei/py_ext/mingc.py
+--- ming-0.3.0/py_ext/mingc.py	2006-04-20 02:33:26.000000000 +0800
++++ ming-0.3.0-abei/py_ext/mingc.py	2006-05-12 06:00:46.000000000 +0800
+@@ -658,5 +658,7 @@
+ 
+ SWFMovie_save = _mingc.SWFMovie_save
+ 
++SWFMovie_dump = _mingc.SWFMovie_dump
++
+ SWFMovie_importCharacter = _mingc.SWFMovie_importCharacter
+ 
+diff -uNr ming-0.3.0/py_ext/ming.i ming-0.3.0-abei/py_ext/ming.i
+--- ming-0.3.0/py_ext/ming.i	2006-04-20 02:33:26.000000000 +0800
++++ ming-0.3.0-abei/py_ext/ming.i	2006-05-12 06:02:07.000000000 +0800
+@@ -697,6 +697,8 @@
+ 
+ int SWFMovie_output(SWFMovie movie, SWFByteOutputMethod method, void *data);
+ int SWFMovie_save(SWFMovie movie, const char *filename);
++/* BO's patch */
++int SWFMovie_dump(SWFMovie movie, int level, void **result);
+ 
+   /* deprecated */
+   /*int SWFMovie_outputC(SWFMovie movie, SWFByteOutputMethod method, void *data, int level);*/
+diff -uNr ming-0.3.0/py_ext/ming.py ming-0.3.0-abei/py_ext/ming.py
+--- ming-0.3.0/py_ext/ming.py	2006-04-20 02:33:26.000000000 +0800
++++ ming-0.3.0-abei/py_ext/ming.py	2006-05-14 02:07:07.000000000 +0800
+@@ -320,6 +320,9 @@
+     def output(self):
+         return mingc.SWFMovie_simpleOutput(self.this)
+ 
++    def dump(self, level):
++        return mingc.SWFMovie_dump(self.this, level)
++
+     def save(self, filename):
+         mingc.SWFMovie_save(self.this, filename)
+ 
+@@ -487,6 +490,9 @@
+     def addString(self, s, advance=None):
+         mingc.SWFText_addString(self.this, s, advance)
+ 
++    def addUTF8String(self, s, advance=None):
++        mingc.SWFText_addUTF8String(self.this, s, advance)
++
+     def setSpacing(self, spacing):
+         mingc.SWFText_setSpacing(self.this, spacing)
+ 
+diff -uNr ming-0.3.0/py_ext/ming_wrap.c ming-0.3.0-abei/py_ext/ming_wrap.c
+--- ming-0.3.0/py_ext/ming_wrap.c	2006-04-20 02:33:26.000000000 +0800
++++ ming-0.3.0-abei/py_ext/ming_wrap.c	2006-05-12 06:29:59.000000000 +0800
+@@ -6178,6 +6178,34 @@
+     return NULL;
+ }
+ 
++/* Bo's patch */
++static PyObject *_wrap_SWFMovie_dump(PyObject *self, PyObject *args) {
++    PyObject *resultobj;
++    SWFMovie arg1 = (SWFMovie) 0 ;
++    int arg2 ;
++    void* result;
++    int length;
++    PyObject * obj0 = 0 ;
++    PyObject * obj1 = 0 ;
++    
++    if(!PyArg_ParseTuple(args,(char *)"OO:SWFMovie_save",&obj0,&obj1)) goto fail;
++    if ((SWIG_ConvertPtr(obj0,(void **) &arg1, 0, SWIG_POINTER_EXCEPTION | 0 )) == -1) SWIG_fail;
++    {
++        if (!PyInt_Check(obj1)) {
++            PyErr_SetString(PyExc_TypeError, "not an integer");
++            return NULL;
++        }
++        arg2 = PyInt_AsLong(obj1);
++    }
++    length = (int) SWFMovie_dump(arg1,arg2, &result);
++    
++    resultobj = PyString_FromStringAndSize((char *)result, length);
++    free(result);
++    return resultobj;
++    fail:
++    return NULL;
++}
++
+ 
+ static PyObject *_wrap_SWFMovie_importCharacter(PyObject *self, PyObject *args) {
+     PyObject *resultobj;
+@@ -6486,6 +6514,7 @@
+ 	 { (char *)"SWFMovie_labelFrame", _wrap_SWFMovie_labelFrame, METH_VARARGS },
+ 	 { (char *)"SWFMovie_output", _wrap_SWFMovie_output, METH_VARARGS },
+ 	 { (char *)"SWFMovie_save", _wrap_SWFMovie_save, METH_VARARGS },
++	 { (char *)"SWFMovie_dump", _wrap_SWFMovie_dump, METH_VARARGS },
+ 	 { (char *)"SWFMovie_importCharacter", _wrap_SWFMovie_importCharacter, METH_VARARGS },
+ 	 { NULL, NULL }
+ };
+diff -uNr ming-0.3.0/py_ext/shape.py ming-0.3.0-abei/py_ext/shape.py
+--- ming-0.3.0/py_ext/shape.py	2006-04-20 02:33:26.000000000 +0800
++++ ming-0.3.0-abei/py_ext/shape.py	2006-05-12 06:31:44.000000000 +0800
+@@ -17,5 +17,6 @@
+ m.add(s)
+ m.nextFrame()
+ 
+-m.save("test.swf")
++#m.save("test.swf")
++print m.dump(-1)
+ 
+diff -uNr ming-0.3.0/src/movie.c ming-0.3.0-abei/src/movie.c
+--- ming-0.3.0/src/movie.c	2005-09-06 19:54:16.000000000 +0800
++++ ming-0.3.0-abei/src/movie.c	2006-05-12 06:19:48.000000000 +0800
+@@ -635,6 +635,25 @@
+ 	return swflength;
+ }
+ 
++/* Bo's patch */
++int SWFMovie_dump(SWFMovie movie, int level, void **result)
++{
++        SWFOutput swfbuffer;
++        int swflength;
++        byte *buffer;
++        if (level<0)
++            level = SWF_compression;
++        swfbuffer = SWFMovie_toOutput(movie, level);
++        swflength = SWFOutput_getLength(swfbuffer);        
++        buffer = SWFOutput_getBuffer(swfbuffer);
++
++        *result=malloc(swflength);
++        memcpy(*result, buffer, swflength);
++
++        destroySWFOutput(swfbuffer);
++        return swflength;
++}
++
+ int
+ SWFMovie_save(SWFMovie movie, const char *filename)
+ {

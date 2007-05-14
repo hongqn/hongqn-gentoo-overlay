@@ -1,0 +1,23 @@
+--- ptl_compile.py.orig	2006-11-01 17:42:02.000000000 +0800
++++ ptl_compile.py	2006-11-01 17:49:05.000000000 +0800
+@@ -55,8 +55,13 @@
+         # beginning of the module.
+         doc = None # self.get_docstring(nodelist, symbol.file_input)
+ 
+-        io_imp = ast.From(IO_MODULE, [(IO_CLASS, None)])
+-        markup_imp = ast.From(MARKUP_MODULE, [(MARKUP_CLASS, None)])
++        if sys.hexversion >= 0x02050000:
++            io_imp = ast.From(IO_MODULE, [(IO_CLASS, None)], 0)
++            markup_imp = ast.From(MARKUP_MODULE, [(MARKUP_CLASS, None)], 0)
++        else:
++            io_imp = ast.From(IO_MODULE, [(IO_CLASS, None)])
++            markup_imp = ast.From(MARKUP_MODULE, [(MARKUP_CLASS, None)])
++
+         markup_assign = ast.Assign([ast.AssName(MARKUP_MANGLED_CLASS,
+                                                 OP_ASSIGN)],
+                                    ast.Name(MARKUP_CLASS))
+@@ -377,3 +382,4 @@
+ 
+ if __name__ == "__main__":
+     main()
++

@@ -1,0 +1,8 @@
+DIST xfce4-cpugraph-plugin-0.3.0.tar.bz2 102638 RMD160 99c309b3bf0ab622a9b95df9b568808a6c034055 SHA1 d869625350d6c0ae4bef3203f03bbc409773494f SHA256 eb6c2eee5f3d56a3202a9affb33242c3434bfbaeb0d7fe02cf267e64e85f3825
+EBUILD xfce4-cpugraph-0.3.0.ebuild 259 RMD160 c99ee7bc4d30dd7171306366deea5615ff6a1d35 SHA1 959be5354a612828568df2b9a20c4f37f1f37eb2 SHA256 47cbd86af0c72bcb691ee5e4ab03dc20d0d4fdff0eab51432e2382f7791acb4c
+MD5 6dc638c57f8c7b3ae1c5e46ec631f1da xfce4-cpugraph-0.3.0.ebuild 259
+RMD160 c99ee7bc4d30dd7171306366deea5615ff6a1d35 xfce4-cpugraph-0.3.0.ebuild 259
+SHA256 47cbd86af0c72bcb691ee5e4ab03dc20d0d4fdff0eab51432e2382f7791acb4c xfce4-cpugraph-0.3.0.ebuild 259
+MD5 227f8d00e91dc4722d7697e3d5be5694 files/digest-xfce4-cpugraph-0.3.0 286
+RMD160 a685dacfb90f778a73ed3909a3a50ca95219fe29 files/digest-xfce4-cpugraph-0.3.0 286
+SHA256 818354f2225005c8f4b12730746c184cd4833cb1de8debadfaec675181480d36 files/digest-xfce4-cpugraph-0.3.0 286

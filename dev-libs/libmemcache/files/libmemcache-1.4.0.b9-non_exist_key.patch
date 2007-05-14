@@ -1,0 +1,11 @@
+--- src/memcache.orig	2005-11-13 12:29:20.000000000 +0800
++++ src/memcache.c	2005-11-13 12:29:50.000000000 +0800
+@@ -1164,7 +1164,7 @@
+ 	res->_flags |= MCM_RES_FOUND;
+       } else {
+ 	/* Reset our offset and try again */
+-	ms->rbuf->off -= cp - mcm_buf_off_ptr(ctxt, ms->rbuf);
++	ms->rbuf->off -= mcm_buf_off_ptr(ctxt, ms->rbuf) - cp + MCM_CSTRLEN("VALUE ");
+ 	continue;
+       }
+ 

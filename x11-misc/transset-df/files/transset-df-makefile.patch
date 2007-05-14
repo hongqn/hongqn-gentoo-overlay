@@ -1,0 +1,11 @@
+--- transset-df-4/Makefile.old	2005-05-27 21:35:54.179480256 +0100
++++ transset-df-4/Makefile	2005-05-27 21:36:00.494520224 +0100
+@@ -13,8 +13,5 @@
+ 
+ $(OBJS): dsimple.h
+ 
+-install:
+-	cp transset-df /usr/bin
+-
+ clean:
+ 	rm -f $(OBJS) transset-df
