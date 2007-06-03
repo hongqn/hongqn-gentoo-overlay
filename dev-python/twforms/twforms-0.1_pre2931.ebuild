@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools"
-RDEPEND=">=dev-python/toscawidgets-0.1
+RDEPEND=">=dev-python/toscawidgets-0.1_pre1
 	>=dev-python/formencode-0.6
 	>=dev-python/genshi-0.3.6"
 
