@@ -38,6 +38,30 @@ AUX 1.4.13/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502 RMD160 a10372a6cd
 MD5 87cf789e1f6866b9ece50a4af418b5b8 files/1.4.13/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
 RMD160 a10372a6cdfce349c6221f5038f2fda699f5f74e files/1.4.13/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
 SHA256 0a7f3626e23291b3859e953bcc1762117a1585c2717adc065ccbb0ccf2f3577a files/1.4.13/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
+AUX 1.4.15-r1/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267 RMD160 c23c816fcddbc99758a0426fc11f70677dbc06e9 SHA1 22e0d05d49cecb652d1250ac66de13fdf228cce4 SHA256 b37042549247ca2d83581aa3bcd1a5356c37015000711cecafda05aa6d6a15c4
+MD5 34d6720749f96327d311661a02886a65 files/1.4.15-r1/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267
+RMD160 c23c816fcddbc99758a0426fc11f70677dbc06e9 files/1.4.15-r1/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267
+SHA256 b37042549247ca2d83581aa3bcd1a5356c37015000711cecafda05aa6d6a15c4 files/1.4.15-r1/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267
+AUX 1.4.15-r1/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502 RMD160 a10372a6cdfce349c6221f5038f2fda699f5f74e SHA1 12c39cd4ca731509256e271daf4aaac8a62e82c4 SHA256 0a7f3626e23291b3859e953bcc1762117a1585c2717adc065ccbb0ccf2f3577a
+MD5 87cf789e1f6866b9ece50a4af418b5b8 files/1.4.15-r1/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
+RMD160 a10372a6cdfce349c6221f5038f2fda699f5f74e files/1.4.15-r1/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
+SHA256 0a7f3626e23291b3859e953bcc1762117a1585c2717adc065ccbb0ccf2f3577a files/1.4.15-r1/04_all_lighttpd-1.4.13-deprecated-ldap-api.diff 502
+AUX 1.4.15-r1/07_all_lighttpd-1.4.15-duplicated_headers_with_folding_crash.diff 3166 RMD160 98110f2a772f0b7bd601dd9bbf1741166730d9e1 SHA1 a52de9fcc0b1605d176984e7a4b778ea5d4a13fe SHA256 d7526ac5605a5c23a39c837967551d3f433f0e70e70b03193fa463693234fb63
+MD5 9295078a5c43574707da9d45a2594fd3 files/1.4.15-r1/07_all_lighttpd-1.4.15-duplicated_headers_with_folding_crash.diff 3166
+RMD160 98110f2a772f0b7bd601dd9bbf1741166730d9e1 files/1.4.15-r1/07_all_lighttpd-1.4.15-duplicated_headers_with_folding_crash.diff 3166
+SHA256 d7526ac5605a5c23a39c837967551d3f433f0e70e70b03193fa463693234fb63 files/1.4.15-r1/07_all_lighttpd-1.4.15-duplicated_headers_with_folding_crash.diff 3166
+AUX 1.4.15-r1/08_all_lighttpd-1.4.15-mod_acces_bypass.diff 3775 RMD160 25dc83e84d1c8d4c63d0e580c3b1336531fb592d SHA1 964cb4b80dab8c52ddf33aa246355bb5136a3f31 SHA256 31b2903c8302b55264e32c15afd9496379909469225e1982a3fc555d713ca785
+MD5 2df0144efa29fcb308dce1262794cd02 files/1.4.15-r1/08_all_lighttpd-1.4.15-mod_acces_bypass.diff 3775
+RMD160 25dc83e84d1c8d4c63d0e580c3b1336531fb592d files/1.4.15-r1/08_all_lighttpd-1.4.15-mod_acces_bypass.diff 3775
+SHA256 31b2903c8302b55264e32c15afd9496379909469225e1982a3fc555d713ca785 files/1.4.15-r1/08_all_lighttpd-1.4.15-mod_acces_bypass.diff 3775
+AUX 1.4.15-r1/09_all_lighttpd-1.4.15-mod_fastcgi_local_dos.diff 463 RMD160 b1841be8246289a517b0f3e343a6fc9b9e65bd79 SHA1 3afce133722f96dd68060d1608843609b306519e SHA256 8183e4ded4aabfdf4fd17c857a0f9d10f4de38d9af6249d5569d8884a37c097c
+MD5 12cf0ac9ed7c83a3959685206c0bac08 files/1.4.15-r1/09_all_lighttpd-1.4.15-mod_fastcgi_local_dos.diff 463
+RMD160 b1841be8246289a517b0f3e343a6fc9b9e65bd79 files/1.4.15-r1/09_all_lighttpd-1.4.15-mod_fastcgi_local_dos.diff 463
+SHA256 8183e4ded4aabfdf4fd17c857a0f9d10f4de38d9af6249d5569d8884a37c097c files/1.4.15-r1/09_all_lighttpd-1.4.15-mod_fastcgi_local_dos.diff 463
+AUX 1.4.15-r1/10_all_lighttpd-1.4.15-mod_scgi_crash.diff 530 RMD160 d29aaae504613b2f89592c19bff27c7947b93f0a SHA1 7f9799092aed18ccecd7504e9fad77830c146b55 SHA256 945fea99cb5138d0bcdea1ffb94562de2a5e37b0079a150e900f4ca5dad442f8
+MD5 5d82f3b10f9511949882e2cad1cb3e64 files/1.4.15-r1/10_all_lighttpd-1.4.15-mod_scgi_crash.diff 530
+RMD160 d29aaae504613b2f89592c19bff27c7947b93f0a files/1.4.15-r1/10_all_lighttpd-1.4.15-mod_scgi_crash.diff 530
+SHA256 945fea99cb5138d0bcdea1ffb94562de2a5e37b0079a150e900f4ca5dad442f8 files/1.4.15-r1/10_all_lighttpd-1.4.15-mod_scgi_crash.diff 530
 AUX 1.4.15/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267 RMD160 c23c816fcddbc99758a0426fc11f70677dbc06e9 SHA1 22e0d05d49cecb652d1250ac66de13fdf228cce4 SHA256 b37042549247ca2d83581aa3bcd1a5356c37015000711cecafda05aa6d6a15c4
 MD5 34d6720749f96327d311661a02886a65 files/1.4.15/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267
 RMD160 c23c816fcddbc99758a0426fc11f70677dbc06e9 files/1.4.15/03_all_lighttpd-1.4.11-errorlog-pipe.diff 5267
@@ -94,6 +118,10 @@ AUX lighttpd-1.3.13-php.diff 1399 RMD160 521ac2e131f1c68c69e717902ef2f161d4f24f9
 MD5 f111e60bb593bffbdb01b9aece46ab20 files/lighttpd-1.3.13-php.diff 1399
 RMD160 521ac2e131f1c68c69e717902ef2f161d4f24f99 files/lighttpd-1.3.13-php.diff 1399
 SHA256 dcf102367a768f8d6b1273327e5299a17f597ea4f7939b485c30a71bee8143ef files/lighttpd-1.3.13-php.diff 1399
+AUX lighttpd-1.4.15-mod_deflate.diff 67101 RMD160 6722ac2e63b78ebd5c4ef48094491555b4d3249d SHA1 9ee6ee0e50afb2fb7b373ae57692d6eaca18716c SHA256 e7f5ad5218e9edc0c7d98390db0ae91940d2457d0ac584a9e6a7d663dc0554ff
+MD5 9861ea43eebc177e3b39e85e1d00385b files/lighttpd-1.4.15-mod_deflate.diff 67101
+RMD160 6722ac2e63b78ebd5c4ef48094491555b4d3249d files/lighttpd-1.4.15-mod_deflate.diff 67101
+SHA256 e7f5ad5218e9edc0c7d98390db0ae91940d2457d0ac584a9e6a7d663dc0554ff files/lighttpd-1.4.15-mod_deflate.diff 67101
 AUX lighttpd.confd 326 RMD160 5ec87aa0f6a4ed1a112033de137cd83cd850e0ee SHA1 e243dbc599b3b3b663946b54bf333b27459e4dc2 SHA256 7843e193644d025c04ad9af01f1dc193b923f1d94d670c4a76b7b225af454b2e
 MD5 3e332a9424ef8bb5264b7fb27efea38c files/lighttpd.confd 326
 RMD160 5ec87aa0f6a4ed1a112033de137cd83cd850e0ee files/lighttpd.confd 326
@@ -126,11 +154,19 @@ AUX spawn-fcgi.initd 1398 RMD160 3fd0fa41d100629e85960034237abc0866ec3d38 SHA1 9
 MD5 78bc6ceac57ecaa47abf4d5df857fe57 files/spawn-fcgi.initd 1398
 RMD160 3fd0fa41d100629e85960034237abc0866ec3d38 files/spawn-fcgi.initd 1398
 SHA256 ae10c764e2bde9bfc483c57ca94a63d87c24cba00b4c06917885c533d2d245b1 files/spawn-fcgi.initd 1398
+DIST lighttpd-1.4.15.tar.bz2 591304 RMD160 6a0f7a498b2815c2eb576917e88775a8e16aad5c SHA1 742b567eca011fa5ef2cc506038389a4959eab56 SHA256 75128e53231c69a22c94ad0a01da974eaa266b21668c1354f71ad07e5f94d9cc
 DIST lighttpd-1.5.0-r1857.tar.gz 870879 RMD160 eff09cd0a4f5f06cf2b0f3d452efe8ebef6c4fe1 SHA1 2ecd038e8c066f3b8c1bb4db3a438928038ae4de SHA256 013bebfb808cc1e825a91456f472a930d6811ae2d1e7941f467f0a99c0cb31de
+EBUILD lighttpd-1.4.15-r1.ebuild 5928 RMD160 562b10bbac5732a7e61536b9e7d4d223235f589a SHA1 2283211f5b854010a6acaf06b878c0aea8c93796 SHA256 49a985168b161ecc082d3e27447a6ffe565c3a255799ffb4efa8639f8747bc95
+MD5 8809f3372a8d20d958d3d8e7c76d131f lighttpd-1.4.15-r1.ebuild 5928
+RMD160 562b10bbac5732a7e61536b9e7d4d223235f589a lighttpd-1.4.15-r1.ebuild 5928
+SHA256 49a985168b161ecc082d3e27447a6ffe565c3a255799ffb4efa8639f8747bc95 lighttpd-1.4.15-r1.ebuild 5928
 EBUILD lighttpd-1.5.0_p1857.ebuild 6420 RMD160 08cba4a6710ffea0c332d8dbf493359b2eed3632 SHA1 fce163c8e8a8c3cd8923ed630d29cee1f829077a SHA256 9ed559556ad7474e9855abc8b0823e6c59e0528562dd6be671fdeaa5dd2dd5e2
 MD5 dc865663c72bafbf005a58a0317f67bc lighttpd-1.5.0_p1857.ebuild 6420
 RMD160 08cba4a6710ffea0c332d8dbf493359b2eed3632 lighttpd-1.5.0_p1857.ebuild 6420
 SHA256 9ed559556ad7474e9855abc8b0823e6c59e0528562dd6be671fdeaa5dd2dd5e2 lighttpd-1.5.0_p1857.ebuild 6420
+MD5 aeb9038042587a68806c8bae25abc8b0 files/digest-lighttpd-1.4.15-r1 250
+RMD160 30662c16f3be53c5609f5645ab3846eda1e05c8d files/digest-lighttpd-1.4.15-r1 250
+SHA256 92da9c6894ac3d83e16b7d8f90d1811f6740974d519c5d1ba3b6029eab0d1f7c files/digest-lighttpd-1.4.15-r1 250
 MD5 b1fe837981ba0210962b937e8e1fb08f files/digest-lighttpd-1.5.0_p1857 262
 RMD160 83f3731920c18e2eb14cdb8dfb6a83acf3ee3b2a files/digest-lighttpd-1.5.0_p1857 262
 SHA256 63b5b94b09383e39fae549ac52b37f505e04baebb7de9ee5379ebc9dabd80e03 files/digest-lighttpd-1.5.0_p1857 262
