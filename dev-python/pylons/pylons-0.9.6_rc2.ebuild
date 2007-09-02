@@ -31,6 +31,7 @@ DEPEND="dev-python/setuptools
 	>=dev-python/simplejson-1.7.1
 	>=dev-python/decorator-2.1.0
 	>=dev-python/nose-0.9.2
+	<=dev-python/nose-0.9.9
 	>=dev-python/mako-0.1.8
 	doc? ( >=dev-python/docutils-0.4
 		>=dev-python/elementtree-1.2.6
