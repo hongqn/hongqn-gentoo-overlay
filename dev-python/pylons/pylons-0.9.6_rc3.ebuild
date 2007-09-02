@@ -44,3 +44,19 @@ DEPEND="dev-python/setuptools
 		>=dev-python/turbokid-0.9.1 )
 	genshi? ( >=dev-python/genshi-0.3.6 )"
 
+src_compile() {
+	distutils_src_compile
+	if use doc; then
+		einfo "Generating docs as requested..."
+		"${python}" setup.py pudge || die "generating docs failed"
+	fi
+}
+
+src_install() {
+	distutils_src_install
+	use doc && dohtml -r docs/html/*
+}
+
+src_test() {
+	PYTHONPATH=. "${python}" setup.py nosetests || die "tests failed"
+}
