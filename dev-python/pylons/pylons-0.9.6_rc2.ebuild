@@ -22,7 +22,7 @@ IUSE="doc cheetah myghty kid genshi"
 
 DEPEND="dev-python/setuptools
 	>=dev-python/routes-1.7
-	>=dev-python/webhelpers-0.3
+	>=dev-python/webhelpers-0.3.2_pre2284
 	>=dev-python/beaker-0.7.4
 	>=dev-python/paste-1.4
 	>=dev-python/pastedeploy-1.3.1
