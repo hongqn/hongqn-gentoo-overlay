@@ -18,11 +18,11 @@ IUSE="doc"
 S=${WORKDIR}/${MY_P}
 
 DEPEND="dev-python/setuptools
-	doc? ( dev-python/pudge dev-python/buildutils )"
+	doc? ( dev-python/pudge
+		>dev-python/buildutils-0.1.2 )"
 
 src_unpack() {
 	unpack "${A}"
-	sed -i -e 's/^highlighter\s*=.*//' "${S}"/setup.cfg  # fix pudge bug
 }
 
 src_compile() {
