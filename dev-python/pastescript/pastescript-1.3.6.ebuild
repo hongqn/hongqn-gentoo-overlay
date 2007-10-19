@@ -21,7 +21,7 @@ S="${WORKDIR}/${MY_P}"
 DEPEND="dev-python/setuptools
 	>=dev-python/paste-1.3
 	dev-python/pastedeploy
-	doc? dev-python/pudge"
+	doc? ( dev-python/pudge )"
 
 src_compile() {
 	distutils_src_compile
