@@ -13,21 +13,24 @@ HOMEPAGE="http://buildutils.lesscode.org/"
 SRC_URI="http://cheeseshop.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-IUSE="doc test"
+IUSE="doc"
 
 DEPEND="dev-python/setuptools
-	doc? ( dev-python/pudge )"
+	doc? ( dev-python/docutils )"
 RDEPEND=""
 
 src_compile() {
 	distutils_src_compile
 	if use doc ; then
 		einfo "Generating docs as requested..."
-		"${python}" setup.py pudge || die "generating docs failed"
+		cd doc
+		for fn in *.rst; do
+			rst2html.py $fn ${fn/.rst/.html} || die "generating docs failed"
+		done
 	fi
 }
 
 src_install() {
 	distutils_src_install
-	use doc && dohtml -r doc/html/*
+	use doc && dohtml -r doc/*.html
 }
