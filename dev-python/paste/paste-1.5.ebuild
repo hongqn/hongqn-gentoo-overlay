@@ -26,6 +26,14 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i \
+		-e '/highlighter/d' \
+		setup.cfg || die "sed failed"
+}
+
 src_compile() {
 	distutils_src_compile
 	if use doc ; then

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/webhelpers/webhelpers-0.3.ebuild,v 1.3 2007/07/11 06:19:47 mr_bones_ Exp $
 
+NEED_PYTHON=2.3
+
 inherit distutils
 
 KEYWORDS="~amd64 ~x86"
@@ -9,9 +11,9 @@ KEYWORDS="~amd64 ~x86"
 MY_PN=WebHelpers
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="Web Helpers"
+DESCRIPTION="A library of helper functions intended to make writing templates in web applications easier."
 HOMEPAGE="http://pylonshq.com/WebHelpers/"
-SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="http://cheeseshop.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 IUSE="doc test"

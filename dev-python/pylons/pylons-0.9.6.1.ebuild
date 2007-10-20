@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 		>=dev-python/kid-0.9
 		>=dev-python/pygments-0.7
 		>=dev-python/pudge-0.1.3
-		>dev-python/buildutils-0.1.2 )"
+		>=dev-python/buildutils-0.1.2 )"
 
 # The tests fail, needs further investigation
 RESTRICT="test"

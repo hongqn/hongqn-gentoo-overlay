@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/routes/routes-1.6.3.ebuild,v 1.2 2007/07/04 20:21:18 lucass Exp $
 
+NEED_PYTHON=2.4
+
 inherit distutils
 
 KEYWORDS="~amd64 ~x86"
@@ -9,7 +11,7 @@ KEYWORDS="~amd64 ~x86"
 MY_PN=Routes
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="Routing Recognition and Generation Tools"
+DESCRIPTION="A Python re-implementation of the Rails routes system for mapping URL's to Controllers/Actions."
 HOMEPAGE="http://routes.groovie.org"
 SRC_URI="http://cheeseshop.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="BSD"
