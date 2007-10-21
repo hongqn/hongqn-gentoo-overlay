@@ -32,6 +32,8 @@ src_compile() {
 	distutils_src_compile
 	if use doc ; then
 		einfo "Generating docs as requested..."
+		addpredict /root/.gconf/.testing.writeability
+		addpredict /root/.gconfd/saved_state
 		PYTHONPATH=. "${python}" setup.py pudge || die "generating docs failed"
 	fi
 }
