@@ -1,8 +1,0 @@
-DIST decorator-2.2.0.zip 132380 RMD160 b23d92251172affa182d4c7bf8a2861f840648f4 SHA1 66a5d99d1ab68990e366c7ebc08bca4edc7acc3c SHA256 6b414459ab21512b13a3cab2cc0bb8cae5c13f2ec8d7b16147af8ed3b9e7efaa
-EBUILD decorator-2.2.0.ebuild 729 RMD160 6600ce9a1c36790fb5a664c0c003a29c7cedf13b SHA1 780ba47a068e7dba8f3963b0f0a0313c76159e93 SHA256 b00f9ff29a5e2fff5f416f5dcf4a9e88a5d8e0ad41a6c425690b24db42af57ff
-MD5 4e82ac7a9c39d3177313c4c91fe2f6f4 decorator-2.2.0.ebuild 729
-RMD160 6600ce9a1c36790fb5a664c0c003a29c7cedf13b decorator-2.2.0.ebuild 729
-SHA256 b00f9ff29a5e2fff5f416f5dcf4a9e88a5d8e0ad41a6c425690b24db42af57ff decorator-2.2.0.ebuild 729
-MD5 86b6101ad29cdc6215e2a6a28183be29 files/digest-decorator-2.2.0 238
-RMD160 fc364a3bd6033110a22b669e718c0c06eca4f0a0 files/digest-decorator-2.2.0 238
-SHA256 7ebfcfb7f24c2dd41f576b3947ee0af4110904e86881a2d2d30ad670d17657ff files/digest-decorator-2.2.0 238

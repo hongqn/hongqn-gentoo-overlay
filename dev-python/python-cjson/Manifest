@@ -1,8 +1,0 @@
-DIST python-cjson-1.0.3x5.tar.gz 15766 RMD160 27a5bde3fd756d6b3de314c71016703aa3d81b21 SHA1 f1edda26a5627aa93fa882a354828e645b40a29d SHA256 311b05ceeb5fd4853bea1a1211fdeff1903fb49c748559c6d5ccfe8b184264cb
-EBUILD python-cjson-1.0.3x_p5.ebuild 402 RMD160 eabd004dc09f27e2b5ebdde1779e530e12e9ec60 SHA1 b304f72fbebf8f697b69165c9bd441f1276f0464 SHA256 def80a1e2944280c174cc5418c9b7c66d8d9cbe4bb6c0611e84e68e8cc0a465d
-MD5 0dd61cf5af88192cec849a704a2fe6a5 python-cjson-1.0.3x_p5.ebuild 402
-RMD160 eabd004dc09f27e2b5ebdde1779e530e12e9ec60 python-cjson-1.0.3x_p5.ebuild 402
-SHA256 def80a1e2944280c174cc5418c9b7c66d8d9cbe4bb6c0611e84e68e8cc0a465d python-cjson-1.0.3x_p5.ebuild 402
-MD5 d8a41ea86e318bae465580e499ff692b files/digest-python-cjson-1.0.3x_p5 188
-RMD160 67a5d9ee5073ef2635a9d76635b8388b2fd74e0f files/digest-python-cjson-1.0.3x_p5 188
-SHA256 c1c48c392df6f11c844adb770c445e77f268eed9aafece7aa0e5f8205a9059a2 files/digest-python-cjson-1.0.3x_p5 188
