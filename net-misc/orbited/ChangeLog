@@ -1,0 +1,24 @@
+# ChangeLog for net-misc/orbited
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/orbited/ChangeLog,v 1.4 2009/09/12 10:24:15 fauli Exp $
+
+  12 Sep 2009; Christian Faulhammer <fauli@gentoo.org>
+  orbited-0.7.10.ebuild:
+  stable x86, bug 281571
+
+*orbited-0.7.10 (30 Aug 2009)
+
+  30 Aug 2009; Caleb Tennis <caleb@gentoo.org> -files/0.7.9/orbited.cfg,
+  orbited-0.7.9.ebuild, -files/0.7.9/orbited.init, +orbited-0.7.10.ebuild,
+  +files/orbited.cfg, +files/orbited.init:
+  version bump per #283204, and fix deps and location of config files
+
+  06 May 2009; Caleb Tennis <caleb@gentoo.org> orbited-0.7.9.ebuild:
+  Add twisted-web as a dep
+
+*orbited-0.7.9 (19 Apr 2009)
+
+  19 Apr 2009; Caleb Tennis <caleb@gentoo.org +files/0.7.9/orbited.cfg,
+  +files/0.7.9/orbited.init, +metadata.xml, +orbited-0.7.9.ebuild:
+  Initial import
+
