@@ -12,4 +12,4 @@ DEPEND="dev-python/setuptools
 	dev-python/gdata"
 RDEPEND=""
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${P}"
