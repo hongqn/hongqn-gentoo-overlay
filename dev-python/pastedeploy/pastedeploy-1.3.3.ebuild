@@ -1,56 +1,59 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pastedeploy/pastedeploy-1.3.3.ebuild,v 1.1 2009/04/26 09:36:21 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pastedeploy/pastedeploy-1.3.3.ebuild,v 1.8 2010/06/27 23:09:47 arfrever Exp $
 
-NEED_PYTHON=2.4
+EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+DISTUTILS_SRC_TEST="nosetests"
 
 inherit eutils distutils multilib
 
-KEYWORDS="~amd64-linux ~x86-linux ~x86-macos"
-
-MY_PN=PasteDeploy
-MY_P=${MY_PN}-${PV}
+MY_PN="PasteDeploy"
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Load, configure, and compose WSGI applications and servers"
-HOMEPAGE="http://pythonpaste.org/deploy/"
-SRC_URI="http://cheeseshop.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+HOMEPAGE="http://pythonpaste.org/deploy/ http://pypi.python.org/pypi/PasteDeploy"
+SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="~amd64-linux ~x86-linux ~x86-macos ~x86-solaris"
 IUSE="doc test"
 
-RDEPEND="dev-python/paste"
+RDEPEND="dev-python/paste
+	dev-python/setuptools"
 DEPEND="${RDEPEND}
-	dev-python/setuptools
-	doc? ( dev-python/buildutils dev-python/pygments dev-python/pudge )
-	test? ( dev-python/nose dev-python/py )"
+	doc? ( dev-python/pygments dev-python/sphinx )"
+RESTRICT_PYTHON_ABIS="3.*"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 PYTHON_MODNAME="paste/deploy"
-RESTRICT="test"
+
+src_prepare() {
+	distutils_src_prepare
+
+	# Delete broken test.
+	rm -f tests/test_config_middleware.py
+}
 
 src_compile() {
 	distutils_src_compile
-	if use doc ; then
-		einfo "Generating docs as requested..."
-		PYTHONPATH=. "${python}" setup.py pudge || die "generating docs failed"
+
+	if use doc; then
+		einfo "Generation of documentation"
+		PYTHONPATH="." "$(PYTHON -f)" setup.py build_sphinx || die "Generation of documentation failed"
 	fi
 }
 
 src_install() {
 	distutils_src_install
-	use doc && dohtml -r docs/html/*
-}
 
-src_test() {
-	distutils_python_version
-
-	# Tests can't import paste from site-packages
-	# So we copy pastedeploy and paste under T.
-	# FIXME This doesn't work. Couldn't figure out why -hawking.
-	cp -pPR build/lib/paste "${T}" || die "couldn't copy pastedeploy."
-	cp -pPR /usr/$(get_libdir)/python${PYVER}/site-packages/paste/* \
-		"${T}"/paste/ || die "couldn't copy paste."
-
-	PYTHONPATH="${T}" "${python}" setup.py nosetests || die "tests failed"
+	if use doc; then
+		pushd build/sphinx/html > /dev/null
+		docinto html
+		cp -R [a-z]*  _static "${ED}usr/share/doc/${PF}/html" || die "Installation of documentation failed"
+		popd > /dev/null
+	fi
 }
