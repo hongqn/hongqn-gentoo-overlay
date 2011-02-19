@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<layman>
+        <overlay type="svn" name="douban"
+            src="http://svn.douban.com/svn/shire/trunk/portage/"
+            contact="hongqn@douban.com">
+            <link>http://svn.douban.com/projects/shire</link>
+            <description>
+                Douban portage overlay.
+            </description>
+        </overlay>
+        <overlay type="svn" name="hongqn"
+            src="http://hongqn-gentoo-overlay.googlecode.com/svn/trunk/"
+            contact="hongqn@gmail.com">
+            <link>http://code.google.com/p/hongqn-gentoo-overlay/</link>
+            <description>
+                hongqn's gentoo overlay
+            </description>
+        </overlay>
+</layman>
