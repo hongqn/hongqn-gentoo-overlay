@@ -26,5 +26,5 @@ src_prepare() {
 src_install() {
 	dobin sleepwatcher || die
 	doman ../sleepwatcher.8 || die
-	dodoc ../ReadMe.rtf || die
+	dodoc ../ReadMe.rtf ../config/*
 }
