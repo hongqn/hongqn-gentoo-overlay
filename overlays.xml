@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <layman>
-        <overlay type="svn" name="hongqn"
-            src="http://hongqn-gentoo-overlay.googlecode.com/svn/trunk/"
+        <overlay type="git" name="hongqn"
+						src="git://github.com/hongqn/hongqn-gentoo-overlay.git"
             contact="hongqn@gmail.com">
-            <link>http://code.google.com/p/hongqn-gentoo-overlay/</link>
+						<link>https://github.com/hongqn/hongqn-gentoo-overlay</link>
             <description>
                 hongqn's gentoo overlay
             </description>
