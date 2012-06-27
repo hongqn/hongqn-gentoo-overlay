@@ -321,12 +321,10 @@ src_compile() {
 			|| die "emake gitweb/gitweb.cgi failed"
 	fi
 
-	case $ARCH in
-		*-macos)
-			cd "${S}"/contrib/credential/osxkeychain || die "cd credential/osxkeychain"
-			git_emake || die "email credential-osxkeychain"
-			;;
-	esac
+	if [[ ${CHOST} == *-darwin* ]]; then
+		cd "${S}"/contrib/credential/osxkeychain || die "cd credential/osxkeychain"
+		git_emake || die "email credential-osxkeychain"
+	fi
 
 	cd "${S}"/Documentation
 	if [[ ${PV} == *9999 ]] ; then
@@ -349,12 +347,9 @@ src_install() {
 		install || \
 		die "make install failed"
 
-	case $ARCH in
-		*-macos)
-			dobin contrib/credential/osxkeychain/git-credential-osxkeychain
-			;;
-	esac
-
+	if [[ ${CHOST} == *-darwin* ]]; then
+		dobin contrib/credential/osxkeychain/git-credential-osxkeychain
+	fi
 
 	# Depending on the tarball and manual rebuild of the documentation, the
 	# manpages may exist in either OR both of these directories.
