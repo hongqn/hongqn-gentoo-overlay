@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git-2
-
 EAPI=3
+
+inherit git-2
 
 DESCRIPTION="Git extensions for Vincent Driessen branching."
 HOMEPAGE="http://github.com/nvie/gitflow"
