@@ -21,6 +21,10 @@ src_prepare() {
 	sed -i \
 		-e 's:LINUX:__linux__:' tree.c \
 		|| die "sed failed"
+	if [[ ${CHOST} == *-darwin* ]]; then
+		sed -i \
+			'/^# Uncomment for FreeBSD:/,+3 s:^#\([^ ]\):\1:' Makefile || die "sed failed"
+	fi
 	mv doc/tree.1.fr doc/tree.fr.1
 }
 
