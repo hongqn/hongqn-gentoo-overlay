@@ -27,6 +27,11 @@ RDEPEND=">=sys-apps/portage-2.1
 	!sys-devel/crossdev-wrappers"
 DEPEND="app-arch/xz-utils"
 
+src_prepare() {
+	cd ${S}
+	sed -i "s:\(\s\|=\)/\(etc\|var\|usr\)/:\1${EROOT}\2/:g" crossdev
+}
+
 src_install() {
 	default
 	if [[ "${PV}" == "99999999" ]] ; then
