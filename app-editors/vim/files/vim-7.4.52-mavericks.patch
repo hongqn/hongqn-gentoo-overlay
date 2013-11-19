@@ -1,0 +1,13 @@
+diff --git a/src/os_mac.h b/src/os_mac.h
+--- a/src/os_unix.c  2013-06-13 16:50:33.000000000 +0200
++++ b/src/os_unix.c  2013-06-13 16:50:40.000000000 +0200
+@@ -18,6 +18,10 @@
+  * changed beyond recognition.
+  */
+ 
++#if defined(__APPLE__)
++#include <AvailabilityMacros.h>
++#endif
++
+ /*
+  * os_unix.c -- code for all flavors of Unix (BSD, SYSV, SVR4, POSIX, ...)
